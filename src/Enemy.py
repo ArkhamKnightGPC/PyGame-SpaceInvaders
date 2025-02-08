@@ -4,6 +4,8 @@ from GameAsset import GameAsset
 
 class Enemy(GameAsset):
 
+    speedX, speedY = 4, 10
+
     def __init__(self, enemyImg, enemyX, enemyY):
         super().__init__(enemyImg, enemyX, enemyY)
         self.goRight = True
@@ -14,15 +16,15 @@ class Enemy(GameAsset):
         if self.goRight:
             if self.x >= 580:
                 self.goRight = False
-                enemydY = 2
+                enemydY = Enemy.speedY
             else:
-                enemydX = 2
+                enemydX = Enemy.speedX
         else:
             if self.x <= -4:
                 self.goRight = True
-                enemydY = 2
+                enemydY = Enemy.speedY
             else:
-                enemydX = -2
+                enemydX = -Enemy.speedX
         self.x, self.y = self.x + enemydX, self.y + enemydY
         
     def draw(self, screen):

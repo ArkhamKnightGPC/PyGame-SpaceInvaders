@@ -6,7 +6,7 @@ class Bullet(GameAsset):
 
     def __init__(self, bulletImg, bulletX, bulletY):
         super().__init__(bulletImg, bulletX, bulletY)
-        self.bulletSpeed = 25
+        self.bulletSpeed = 10
         self.inAction = True    
         
     def updatePosition(self):
